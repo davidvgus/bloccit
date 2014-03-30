@@ -36,7 +36,7 @@ group :production do
 end
 
 group :development do
-  'sqlite3'
+  gem 'sqlite3'
 end
 
 # Use ActiveModel has_secure_password
