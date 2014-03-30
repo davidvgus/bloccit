@@ -32,6 +32,7 @@ end
 
 group :production do
   gem 'pg'
+  gem 'sprockets_better_errors'
 end
 
 group :development do
