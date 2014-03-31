@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.0.0'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.4'
 
@@ -32,12 +34,13 @@ end
 
 gem 'haml'
 
+gem 'rails-footnotes', '>= 4.0.0', '<5'
+
 group :production do
   gem 'pg'
   gem 'sprockets_better_errors'
   gem 'pry-rails'
   gem 'haml-rails'
-  gem 'rails-footnotes', '>= 4.0.0', '<5'
 end
 
 group :development do
