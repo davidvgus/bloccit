@@ -34,6 +34,8 @@ end
 
 gem 'haml'
 
+gem 'bootstrap-sass', '~> 3.1.1'
+
 gem 'rails-footnotes', '>= 4.0.0', '<5'
 
 group :production do
