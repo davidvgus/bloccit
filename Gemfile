@@ -33,6 +33,7 @@ end
 group :production do
   gem 'pg'
   gem 'sprockets_better_errors'
+  gem 'pry-rails'
 end
 
 group :development do
