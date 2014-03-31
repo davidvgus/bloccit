@@ -28,4 +28,14 @@ Bloccit::Application.configure do
   config.assets.debug = true
 
   config.assets.raise_production_errors = true
+
+
+  silence_warnings do
+    begin
+      require 'pry'
+      IRB = Pry
+    rescue LoadError
+    end
+  end
+
 end
