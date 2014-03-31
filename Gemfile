@@ -37,7 +37,6 @@ end
 
 group :development do
   gem 'sqlite3'
-  gem 'pry'
 end
 
 # Use ActiveModel has_secure_password
