@@ -30,10 +30,14 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'haml'
+
 group :production do
   gem 'pg'
   gem 'sprockets_better_errors'
   gem 'pry-rails'
+  gem 'haml-rails'
+  gem 'rails-footnotes', '>= 4.0.0', '<5'
 end
 
 group :development do
