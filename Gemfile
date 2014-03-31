@@ -32,22 +32,23 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-gem 'haml'
+#gem 'haml-rails'
 
 gem 'bootstrap-sass', '~> 3.1.1'
 
 gem 'rails-footnotes', '>= 4.0.0', '<5'
 
+group :development do
+  gem 'sqlite3'
+  gem 'pry-rails'
+  gem 'quiet_assets'
+end
+
 group :production do
   gem 'pg'
   gem 'sprockets_better_errors'
-  gem 'pry-rails'
-  gem 'haml-rails'
 end
 
-group :development do
-  gem 'sqlite3'
-end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
