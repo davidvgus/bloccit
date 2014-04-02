@@ -42,8 +42,12 @@ group :development do
   gem 'sqlite3'
   gem 'pry-rails'
   gem 'quiet_assets'
+  gem 'faker'
 end
 
+group :test do
+  gem 'faker'
+end
 group :production do
   gem 'pg'
   gem 'sprockets_better_errors'
