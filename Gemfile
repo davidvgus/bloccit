@@ -43,6 +43,7 @@ group :development do
   gem 'pry-rails'
   gem 'quiet_assets'
   gem 'faker'
+  gem 'thin'
 end
 
 group :test do

@@ -4,3 +4,8 @@
 require File.expand_path('../config/application', __FILE__)
 
 Bloccit::Application.load_tasks
+
+desc 'Start thin server'
+task :start_thin do
+  exec('bundle exec thin start')
+end
