@@ -36,19 +36,23 @@ end
 
 gem 'bootstrap-sass', '~> 3.1.1'
 
-gem 'rails-footnotes', '>= 4.0.0', '<5'
+gem 'faker', :group => [:development, :test]
+gem 'devise'
+gem 'figaro'
 
 group :development do
   gem 'sqlite3'
   gem 'pry-rails'
   gem 'quiet_assets'
-  gem 'faker'
   gem 'thin'
+  gem 'rails-footnotes', '>= 4.0.0', '<5'
 end
 
 group :test do
-  gem 'faker'
+  #gem 'faker'
+  gem 'rspec'
 end
+
 group :production do
   gem 'pg'
   gem 'sprockets_better_errors'
