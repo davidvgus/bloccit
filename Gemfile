@@ -46,6 +46,7 @@ group :development do
   gem 'quiet_assets'
   gem 'thin'
   gem 'rails-footnotes', '>= 4.0.0', '<5'
+  gem 'awesome_print'
 end
 
 group :test do
