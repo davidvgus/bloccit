@@ -45,7 +45,7 @@ end
 
 user = User.first
 user.skip_reconfirmation!
-user.update_attributes(email: 'davegreg@radicalskeptic.net', password: 'victor123', password_confirmation: 'victor123')
+user.update_attributes(email: ENV['USER1'], password: ENV['USER1_PASSWORD'], password_confirmation: ENV['USER1_PASSWORD'])
 
 puts "Seed finished"
 puts "#{User.count} users created"
