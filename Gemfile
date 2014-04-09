@@ -39,6 +39,7 @@ gem 'bootstrap-sass', '~> 3.1.1'
 gem 'faker', :group => [:development, :test]
 gem 'devise'
 gem 'figaro'
+gem 'pundit'
 
 group :development do
   gem 'sqlite3'

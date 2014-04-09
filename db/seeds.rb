@@ -45,7 +45,18 @@ end
 
 user = User.first
 user.skip_reconfirmation!
-user.update_attributes(email: ENV['USER1'], password: ENV['USER1_PASSWORD'], password_confirmation: ENV['USER1_PASSWORD'])
+user.update_attributes(name: "David Gustafson", email: ENV['USER1'], password: ENV['USER1_PASSWORD'], password_confirmation: ENV['USER1_PASSWORD'])
+
+admin = User.new(name: 'Admin User',
+                 email: 'admin@example.com',
+                 password: ENV['USER1_PASSWORD'],
+                 password_confirmation: ENV['USER1_PASSWORD'])
+admin.skip_confirmation!
+admin.save
+admin.update_attribute(:role, 'admin')
+
+
+
 
 puts "Seed finished"
 puts "#{User.count} users created"
