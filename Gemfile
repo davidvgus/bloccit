@@ -41,8 +41,11 @@ gem 'devise'
 gem 'figaro'
 gem 'pundit'
 
+
 group :development do
   gem 'sqlite3'
+  gem 'guard'
+  gem 'guard-rspec', require: false
   gem 'pry-rails'
   gem 'quiet_assets'
   gem 'thin'
