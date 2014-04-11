@@ -49,12 +49,9 @@ group :development do
   gem 'pry-rails'
   gem 'quiet_assets'
   gem 'thin'
-  #gem 'rails-footnotes', '>= 4.0.0', '<5'
-  gem 'awesome_print'
 end
 
 group :test do
-  #gem 'faker'
   gem 'rspec'
 end
 
