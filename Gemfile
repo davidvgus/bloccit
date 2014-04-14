@@ -40,6 +40,7 @@ gem 'faker', :group => [:development, :test]
 gem 'devise'
 gem 'figaro'
 gem 'pundit'
+gem 'redcarpet'
 
 
 group :development do
