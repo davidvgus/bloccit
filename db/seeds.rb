@@ -9,7 +9,7 @@
 require 'faker'
 
 topics = []
-15.times do
+11.times do
   topics << Topic.create(
     name: Faker::Lorem.sentence,
     description: Faker::Lorem.paragraph )
@@ -31,7 +31,7 @@ end
   # The `skip_confirmation!` method sets the confirmation date
   # to avoid sending an email. The `save` method updates the database.
 
-  5.times do
+  40.times do
     topic = topics.first
     post = Post.create(
       user: user,
@@ -74,6 +74,7 @@ member.save
 
 puts "Seed finished"
 puts "#{User.count} users created"
+puts "#{Topic.count} topics created"
 puts "#{Post.count} posts created"
 puts "#{Comment.count} comments created"
 
