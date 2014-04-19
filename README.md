@@ -2,7 +2,7 @@
 
 Made with my mentor at [Bloc](http://bloc.io).
 
-
+##
 ##Sensitive Files
 
 Sensitive data should be stored in the `config/application.yml` file.
