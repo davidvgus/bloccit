@@ -45,6 +45,12 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
 gem 'will_paginate', '~> 3.0.5'
+gem 'factory_girl_rails', :group => [:development, :test]
+
+group :development, :test do
+    gem 'rspec-rails', '~> 3.0.0.beta'
+end
+
 
 group :development do
   gem 'sqlite3'

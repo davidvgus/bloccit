@@ -10,38 +10,25 @@ require 'faker'
 
 topics = []
 11.times do
-  topics << Topic.create(
-    name: Faker::Lorem.sentence,
-    description: Faker::Lorem.paragraph )
+  topics << FactoryGirl.create(:topic)
 end
 
 # Create 5 users with their own posts
 5.times do
-  password = Faker::Lorem.characters(10)
-  user = User.new(
-    name: Faker::Name.name,
-    email: Faker::Internet.email,
-    password: password,
-    password_confirmation: password)
-  user.skip_confirmation!
-  user.save
-
-  # Note: by calling `User.new` instead of `create`,
-  # we create an instance of a user which isn't saved to the database.
-  # The `skip_confirmation!` method sets the confirmation date
-  # to avoid sending an email. The `save` method updates the database.
+  user = FactoryGirl.build(:user)
 
   40.times do
     topic = topics.first
-    post = Post.create(
-      user: user,
-      topic: topic,
-      title: Faker::Lorem.sentence,
-      body: Faker::Lorem.paragraph)
+    post = FactoryGirl.build(:post, user: user, topic: topic)
     # set the created_at to a time within the past year
     post.update_attribute(:created_at, Time.now - rand(600..31536000))
+
+    1.times do
+      FactoryGirl.create(:comment, user: user, post: post)
+    end
     topics.rotate!
   end
+  user.save!
 end
 
 admin = User.new(name: 'Admin User',
