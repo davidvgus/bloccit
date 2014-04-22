@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
     @comment.post = @post
     @new_comment = Comment.new
 
-    #authorize @comment
+    authorize @comment
 
     if @comment.save
       flash[:notice] =  "Comment was saved successfully."
@@ -20,6 +20,22 @@ class CommentsController < ApplicationController
     end
 
     redirect_to [@topic, @post]
+  end
+
+  def destroy
+    @topic = Topic.find(params[:topic_id])
+    @post = Post.find(params[:post_id])
+    @comment = Comment.find(params[:id])
+
+    authorize @comment
+
+    if @comment.destroy
+      flash[:notice] = "Comment was deleted"
+      redirect_to [@topic, @post]
+    else
+      flash[:error] = "Error deleting comment"
+      redirect_to [@topic, @post]
+    end
   end
 
 private
