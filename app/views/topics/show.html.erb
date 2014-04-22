@@ -9,6 +9,7 @@
     <p class="lead"><%= @topic.description %></p>
     <%= will_paginate @posts  %>
     <% @posts.each do |post| %>
+      <%= render partial: 'votes/voter', locals: { topic: @topic, post: post } %>
       <div class="media">
         <div class="media-body">
           <h4 class="media-heading">

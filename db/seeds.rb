@@ -22,10 +22,12 @@ end
     post = FactoryGirl.build(:post, user: user, topic: topic)
     # set the created_at to a time within the past year
     post.update_attribute(:created_at, Time.now - rand(600..31536000))
-
+    post.update_rank
+    post.save!
     1.times do
       FactoryGirl.create(:comment, user: user, post: post)
     end
+
     topics.rotate!
   end
   user.save!
