@@ -35,6 +35,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    binding.pry
     @topic = Topic.find(params[:topic_id])
     @post = Post.find(params[:id])
 
