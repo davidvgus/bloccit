@@ -53,6 +53,7 @@ end
 
 
 group :development do
+  gem 'better_errors'
   gem 'sqlite3'
   gem 'guard'
   gem 'guard-rspec', require: false
