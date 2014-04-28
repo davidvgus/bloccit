@@ -3,7 +3,6 @@ class CommentsController < ApplicationController
   respond_to :html, :js
 
   def create
-    #require 'pry';binding.pry
     @topic = Topic.find( params[:topic_id] )
     @post = @topic.posts.find( params[:post_id] )
     @comments = @post.comments
@@ -20,7 +19,9 @@ class CommentsController < ApplicationController
       flash[:error] = "Error creating comment. Please try again."
     end
 
-    redirect_to [@topic, @post]
+    respond_with(@comment) do |f|
+      f.html { redirect_to [@topic, @post] }
+    end
   end
 
   def destroy
