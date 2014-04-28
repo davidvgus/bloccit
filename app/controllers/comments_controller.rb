@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
 
+  respond_to :html, :js
 
   def create
     #require 'pry';binding.pry
@@ -31,10 +32,12 @@ class CommentsController < ApplicationController
 
     if @comment.destroy
       flash[:notice] = "Comment was deleted"
-      redirect_to [@topic, @post]
     else
       flash[:error] = "Error deleting comment"
-      redirect_to [@topic, @post]
+    end
+
+    respond_with(@comment) do |f|
+      f.html {redirect_to [@topic, @post]}
     end
   end
 
